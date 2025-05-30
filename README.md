@@ -28,7 +28,7 @@ Paste the following code into your browser console **while Cookie Clicker is ope
 
 ```js
 document.body.appendChild(Object.assign(document.createElement('script'), {
-  src: 'https://raw.githubusercontent.com/whotfusests/burnt-cookie/main/loader.js'
+  src: 'https://raw.githubusercontent.com/whotfusests/Burnt-Cookie/main/modules/loader.js'
 }));
 ```
 
