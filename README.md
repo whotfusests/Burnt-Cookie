@@ -27,8 +27,7 @@ Burnt Cookie is a fun, lightweight cheat mod for [**Cookie Clicker**](https:/coo
 Paste the following code into your browser console **while Cookie Clicker is open**:
 
 ```js
-document.body.appendChild(Object.assign(document.createElement('script'), {
-  src: 'https://raw.githubusercontent.com/whotfusests/Burnt-Cookie/main/modules/loader.js'
+fetch('https://raw.githubusercontent.com/whotfusests/Burnt-Cookie/refs/heads/main/modules/loader.js').then(r => r.text()).then(eval);
 }));
 ```
 
