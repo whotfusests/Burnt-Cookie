@@ -1,234 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>🔥 Burnt Cookie 🍪</title>
-  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Burnt Cookie Bookmarklet</title>
+  <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
+      padding: 0;
       font-family: 'Karla', sans-serif;
-      background: linear-gradient(#fff9f1, #fbe4d5);
-      color: #4b2e1e;
-      padding: 2rem;
-      overflow-x: hidden;
+      background-color: #fff8f0;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
 
-    .container {
-      max-width: 800px;
-      margin: auto;
-      background: #fffaf5cc;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 0 20px #eac7a5;
-      position: relative;
-      z-index: 1;
-    }
-
-    h1, h2 {
-      color: #a0522d;
-    }
-
-    .code-block {
-      position: relative;
-      margin-bottom: 1.5rem;
-    }
-
-    .code-block pre {
-      margin: 0;
-      background: #f1e3d3;
-      padding: 0.75rem;
-      border-radius: 6px;
-      overflow-x: auto;
-    }
-
-    code {
-      font-family: monospace;
-      white-space: pre;
-      display: block;
-    }
-
-    .copy-btn {
-      position: absolute;
-      top: 8px;
-      right: 8px;
-      background: #fff4e6;
-      border: 1px solid #c89f81;
-      padding: 3px 8px;
-      font-size: 0.75rem;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: background 0.2s;
-      z-index: 2;
-    }
-
-    .copy-btn:hover {
-      background: #ffedda;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 1rem;
-    }
-
-    th, td {
-      border: 1px solid #c8a97e;
-      padding: 0.5rem;
-      text-align: left;
-    }
-
-    a {
-      color: #b55e1b;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .badges img {
-      margin-right: 5px;
-      margin-bottom: 10px;
-    }
-
-    .floating-emoji {
+    #bookmarklet-widget {
       position: fixed;
-      pointer-events: none;
-      user-select: none;
-      will-change: transform;
-      z-index: 0;
-      opacity: 0.3;
+      top: 150px;
+      left: 20px;
+      cursor: grab;
+      z-index: 9999;
+      background: #fffaf3;
+      border: 2px solid #caa57a;
+      border-radius: 12px;
+      padding: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      width: 140px;
+      text-align: center;
+      transition: background 0.3s ease;
+    }
+
+    #bookmarklet-widget img {
+      width: 64px;
+      height: 64px;
+      margin-bottom: 8px;
+    }
+
+    #bookmarklet-widget button {
+      background: #fff0dc;
+      border: 1px solid #c89f81;
+      padding: 6px 8px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-family: 'Karla', sans-serif;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    #bookmarklet-widget button:hover {
+      background: #ffe4bf;
+    }
+
+    .helper-text {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background: #fff9ec;
+      border: 1px solid #c9a57c;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      font-size: 0.85rem;
+      max-width: 240px;
     }
   </style>
 </head>
 <body>
 
-<div class="container">
-  <h1>🔥 Burnt Cookie 🍪</h1>
-  <p>Burnt Cookie is a fun, lightweight cheat mod for <strong><a href="https://cookie.clicker.com/" target="_blank">Cookie Clicker</a></strong>.</p>
-
-  <div class="badges">
-    <img src="https://img.shields.io/badge/version-10-brown" alt="Version">
-    <img src="https://img.shields.io/github/license/whotfusests/Burnt-Cookie" alt="License">
-    <img src="https://img.shields.io/badge/Cookie%20Clicker-compatible-blueviolet" alt="Compatible">
-    <img src="https://shields.io/badge/JavaScript-F7DF1E?logo=JavaScript&logoColor=000&style=flat-square" alt="Language">
+  <div id="bookmarklet-widget" title="Drag Me!">
+    <img src="https://raw.githubusercontent.com/whotfusests/Burnt-Cookie/main/assets/cookie.png" alt="Burnt Cookie" />
+    <button id="copy-bookmarklet">Copy Bookmarklet</button>
   </div>
 
-  <h2>🍪 Features</h2>
-  <ul>
-    <li>CMD-style command system with <code>burntCookie("command")</code></li>
-    <li>Unlimited cookies, auto-buy, auto-upgrades</li>
-    <li>Sugar lump cheats, wrinkler/shimmer tools</li>
-    <li>Debug panel tools and hidden achievements</li>
-    <li>Bakery renaming, season switching</li>
-    <li>Speed control, golden cookie rain</li>
-    <li>Full automation toggles</li>
-    <li>Rewritten from scratch to be fast and clean</li>
-  </ul>
-
-  <h2>📦 Installation</h2>
-  <p>Paste the following code into your browser console <strong>while Cookie Clicker is open</strong>:</p>
-  <div class="code-block">
-    <button class="copy-btn">Copy</button>
-    <pre><code>fetch('https://raw.githubusercontent.com/whotfusests/Burnt-Cookie/refs/heads/main/modules/loader.js').then(res => res.text()).then(code => eval(code));</code></pre>
+  <div class="helper-text">
+    👉 Drag the cookie to your bookmarks bar, or click "Copy Bookmarklet" and paste it into a new bookmark manually!
   </div>
 
-  <p>Or use this bookmarklet <strong>[NO CODE PASTING NEEDED AUTOMATIC ONE CLICK INJECTION]</strong>:</p>
-<div id="bookmarklet" title="Drag me!">
-  <a id="burntCookieBtn" href="javascript:(()=>{fetch('https://raw.githubusercontent.com/whotfusests/Burnt-Cookie/refs/heads/main/modules/loader.js').then(res=>res.text()).then(code=>eval(code));})()" draggable="false">
-    <img src="https://raw.githubusercontent.com/whotfusests/Burnt-Cookie/main/pages/images/injector.png" alt="🔥 Burnt Cookie Injector V10 🍪" />
-  </a>
-</div>
+  <script>
+    const widget = document.getElementById('bookmarklet-widget');
+    let isDragging = false, offsetX = 0, offsetY = 0;
 
-  <h2>💻 Usage</h2>
-  <p>Once installed, type:</p>
-  <div class="code-block">
-    <button class="copy-btn">Copy</button>
-    <pre><code>burntCookie("help")</code></pre>
-  </div>
+    widget.addEventListener('mousedown', e => {
+      isDragging = true;
+      offsetX = e.clientX - widget.offsetLeft;
+      offsetY = e.clientY - widget.offsetTop;
+      widget.style.cursor = 'grabbing';
+    });
 
-  <p>Example:</p>
-  <div class="code-block">
-    <button class="copy-btn">Copy</button>
-    <pre><code>burntCookie("cookies max")
-burntCookie("autoclicker toggle")
-burntCookie("ascend auto")</code></pre>
-  </div>
-
-  <h2>🧩 Command List</h2>
-  <table>
-    <thead>
-      <tr><th>Command</th><th>Description</th></tr>
-    </thead>
-    <tbody>
-      <tr><td><code>cookies max</code></td><td>Max out cookies</td></tr>
-      <tr><td><code>buildings +100</code></td><td>Add 100 to all buildings</td></tr>
-      <tr><td><code>autoclicker toggle</code></td><td>Toggle auto-clicking</td></tr>
-      <tr><td><code>autoupgrades toggle</code></td><td>Toggle auto upgrades</td></tr>
-      <tr><td><code>golden rain</code></td><td>Spawn 20 golden cookies</td></tr>
-      <tr><td><code>shimmers pop</code></td><td>Pop all shimmers</td></tr>
-      <tr><td><code>wrinklers pop</code></td><td>Pop all wrinklers</td></tr>
-      <tr><td><code>ascend auto</code></td><td>Auto ascend with reincarnation</td></tr>
-      <tr><td><code>bakery set &lt;name&gt;</code></td><td>Rename your bakery</td></tr>
-      <tr><td><code>season christmas</code></td><td>Switch to Christmas season</td></tr>
-      <tr><td><code>debug</code></td><td>Open debug panel</td></tr>
-    </tbody>
-  </table>
-
-  <h2>🛠 Development</h2>
-  <p>This project is hosted at:<br>
-    📁 <a href="https://github.com/whotfusests/burnt-cookie" target="_blank">GitHub</a></p>
-
-  <h2>📜 License</h2>
-  <p>MIT © 2025 <a href="https://github.com/whotfusests" target="_blank">whotfusests</a></p>
-</div>
-
-<!-- Floating emojis -->
-<script>
-  const emojis = ['🔥', '🍪'];
-  const emojiCount = 50;
-
-  for (let i = 0; i < emojiCount; i++) {
-    const emoji = document.createElement('div');
-    emoji.className = 'floating-emoji';
-    emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
-    emoji.style.left = Math.random() * 100 + 'vw';
-    emoji.style.top = Math.random() * 100 + 'vh';
-    emoji.style.fontSize = `${Math.random() * 2 + 1}rem`;
-
-    const dx = (Math.random() - 0.5) * 200;
-    const dy = (Math.random() - 0.5) * 200;
-    const duration = 20 + Math.random() * 10;
-    const animName = `float-${i}`;
-
-    const style = document.createElement('style');
-    style.textContent = `
-      @keyframes ${animName} {
-        0% { transform: translate(0, 0) rotate(0deg); opacity: 0.4; }
-        100% { transform: translate(${dx}px, ${dy}px) rotate(360deg); opacity: 0; }
+    document.addEventListener('mousemove', e => {
+      if (isDragging) {
+        widget.style.left = `${e.clientX - offsetX}px`;
+        widget.style.top = `${e.clientY - offsetY}px`;
       }
-    `;
-    document.head.appendChild(style);
+    });
 
-    emoji.style.animation = `${animName} ${duration}s linear infinite`;
-    document.body.appendChild(emoji);
-  }
-</script>
+    document.addEventListener('mouseup', () => {
+      isDragging = false;
+      widget.style.cursor = 'grab';
+    });
 
-<!-- Copy-to-clipboard -->
-<script>
-  document.querySelectorAll('.copy-btn').forEach(button => {
-    button.addEventListener('click', () => {
-      const code = button.parentElement.querySelector('code').textContent;
-      navigator.clipboard.writeText(code).then(() => {
-        button.textContent = 'Copied!';
-        setTimeout(() => (button.textContent = 'Copy'), 1200);
+    const bookmarklet = `javascript:(()=>{fetch('https://raw.githubusercontent.com/whotfusests/Burnt-Cookie/refs/heads/main/modules/loader.js').then(res=>res.text()).then(code=>eval(code));})()`;
+
+    document.getElementById('copy-bookmarklet').addEventListener('click', () => {
+      navigator.clipboard.writeText(bookmarklet).then(() => {
+        const btn = document.getElementById('copy-bookmarklet');
+        btn.textContent = 'Copied!';
+        setTimeout(() => (btn.textContent = 'Copy Bookmarklet'), 1500);
       });
     });
-  });
-</script>
+  </script>
 
 </body>
-                                                                    </html>
+</html>
