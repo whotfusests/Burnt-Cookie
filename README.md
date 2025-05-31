@@ -2,7 +2,7 @@
 
 Burnt Cookie is a fun, lightweight cheat mod for [**Cookie Clicker**](https:/cookie.clicker.com/). 
 
-![Version](https://img.shields.io/badge/version-10-brown)
+![Version](https://img.shields.io/badge/version-11-brown)
 ![License](https://img.shields.io/github/license/whotfusests/Burnt-Cookie)
 ![Cookie Clicker](https://img.shields.io/badge/Cookie%20Clicker-compatible-blueviolet)
 ![Language](https://shields.io/badge/JavaScript-F7DF1E?logo=JavaScript&logoColor=000&style=flat-square)
