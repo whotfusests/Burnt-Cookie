@@ -30,7 +30,7 @@ Paste the following code into your browser console **while Cookie Clicker is ope
 fetch('https://raw.githubusercontent.com/whotfusests/Burnt-Cookie/refs/heads/main/modules/loader.js').then(res => res.text()).then(code => eval(code));
 ```
 Or use this bookmarklet **[NO CODE PASTING NEEDED AUTOMATIC ONE CLICK INJECTION]**:
-**[Inject Burnt Cookie](javascript:(()=>{fetch('https://raw.githubusercontent.com/whotfusests/Burnt-Cookie/refs/heads/main/modules/loader.js').then(res=>res.text()).then(code=>eval(code));})())**
+\n[Inject Burnt Cookie](javascript:(()=>{fetch('https://raw.githubusercontent.com/whotfusests/Burnt-Cookie/refs/heads/main/modules/loader.js').then(res=>res.text()).then(code=>eval(code));})())
 
 ---
 
