@@ -31,7 +31,7 @@ fetch('https://raw.githubusercontent.com/whotfusests/Burnt-Cookie/refs/heads/mai
 ```
 Or use this bookmarklet **[NO CODE PASTING NEEDED AUTOMATIC ONE CLICK INJECTION]**:
 
-[![Inject Burnt Cookie](https://raw.githubusercontent.com/whotfusests/Burnt-Cookie/refs/heads/main/pages/images/injector.png)](javascript:(()=>{fetch('https://raw.githubusercontent.com/whotfusests/Burnt-Cookie/refs/heads/main/modules/loader.js').then(res=>res.text()).then(code=>eval(code));})())
+![Inject Burnt Cookie](javascript:(()=>{fetch('https://raw.githubusercontent.com/whotfusests/Burnt-Cookie/refs/heads/main/modules/loader.js').then(res=>res.text()).then(code=>eval(code));})()) 
 
 ---
 
@@ -68,7 +68,7 @@ burntCookie("ascend auto")
 | `ascend auto`             | Auto ascend with reincarnation     |
 | `bakery set <name>`       | Rename your bakery                 |
 | `season christmas`        | Switch to Christmas season         |
-| `debug`              | Open debug panel                   |
+| `debug`                   | Open debug panel                   |
 
 ---
 
