@@ -29,8 +29,10 @@ Paste the following code into your browser console **while Cookie Clicker is ope
 ```js
 fetch('https://raw.githubusercontent.com/whotfusests/Burnt-Cookie/refs/heads/main/modules/loader.js').then(res => res.text()).then(code => eval(code));
 ```
-Or use this bookmarklet **[NO CODE PASTING NEEDED AUTOMATIC ONE CLICK INJECTION]**:<br>
-<a href="javascript:(()=>{fetch('https://raw.githubusercontent.com/whotfusests/Burnt-Cookie/refs/heads/main/modules/loader.js').then(res=>res.text()).then(code=>eval(code));})()"><img src="https://raw.githubusercontent.com/whotfusests/Burnt-Cookie/refs/heads/main/images/injector.png"></a>
+Or use this bookmarklet **[NO CODE PASTING NEEDED AUTOMATIC ONE CLICK INJECTION]**:
+```js
+javascript:(()=>{fetch('https://raw.githubusercontent.com/whotfusests/Burnt-Cookie/refs/heads/main/modules/loader.js').then(res=>res.text()).then(code=>eval(code));})()
+```
 
 ---
 
