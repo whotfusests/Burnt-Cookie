@@ -3,74 +3,89 @@
 <head>
   <meta charset="UTF-8">
   <title>🔥 Burnt Cookie 🍪</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <style>
     body {
       margin: 0;
       font-family: 'Karla', sans-serif;
       background: linear-gradient(#fff9f1, #fbe4d5);
       color: #4b2e1e;
-      padding: 2rem;
-      overflow-x: hidden;
+      padding: 1.5rem;
     }
 
     .container {
-      max-width: 800px;
+      max-width: 860px;
       margin: auto;
       background: #fffaf5cc;
       padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 0 20px #eac7a5;
-      position: relative;
-      z-index: 1;
+      border-radius: 14px;
+      box-shadow: 0 0 25px #eac7a5;
     }
 
     h1, h2 {
       color: #a0522d;
     }
 
-    .code-block {
-      position: relative;
-      margin-bottom: 1.5rem;
+    p, li {
+      font-size: 1rem;
+      line-height: 1.6;
     }
 
-    .code-block pre {
-      margin: 0;
+    ul {
+      margin-top: 0.5rem;
+      padding-left: 1.2rem;
+    }
+
+    .code-block {
+      position: relative;
       background: #f1e3d3;
       padding: 0.75rem;
       border-radius: 6px;
+      margin-bottom: 1rem;
       overflow-x: auto;
     }
 
     code {
       font-family: monospace;
-      white-space: pre;
-      display: block;
+      white-space: pre-wrap;
     }
 
     .copy-btn {
       position: absolute;
-      top: 8px;
-      right: 8px;
+      top: 6px;
+      right: 6px;
       background: #fff4e6;
       border: 1px solid #c89f81;
-      padding: 3px 8px;
+      padding: 4px 8px;
       font-size: 0.75rem;
       border-radius: 4px;
       cursor: pointer;
-      transition: background 0.2s;
-      z-index: 2;
     }
 
     .copy-btn:hover {
       background: #ffedda;
     }
 
+    .bookmarklet {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+
+    .bookmarklet img {
+      width: 180px;
+      cursor: grab;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
     table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 1rem;
+      font-size: 0.95rem;
     }
 
     th, td {
@@ -88,170 +103,78 @@
       text-decoration: underline;
     }
 
-    .badges img {
-      margin-right: 5px;
-      margin-bottom: 10px;
-    }
+    @media (max-width: 600px) {
+      .container {
+        padding: 1rem;
+      }
 
-    .floating-emoji {
-      position: fixed;
-      pointer-events: none;
-      user-select: none;
-      will-change: transform;
-      z-index: 0;
-      opacity: 0.3;
+      .bookmarklet img {
+        width: 100%;
+        max-width: 240px;
+      }
     }
   </style>
 </head>
 <body>
+  <div class="container">
+    <h1>🔥 Burnt Cookie 🍪</h1>
+    <p><strong>Burnt Cookie</strong> is a powerful, user-friendly cheat menu for <a href="https://cookie.clicker.com/" target="_blank">Cookie Clicker</a>. Use it to bend the rules and add fun automation!</p>
 
-<div class="container">
-  <h1>🔥 Burnt Cookie 🍪</h1>
-  <p>Burnt Cookie is a fun, lightweight cheat mod for <strong><a href="https://cookie.clicker.com/" target="_blank">Cookie Clicker</a></strong>.</p>
+    <h2>🍪 Features</h2>
+    <ul>
+      <li>Command system with <code>burntCookie("command")</code></li>
+      <li>Unlimited cookies, sugar lumps, and debug tools</li>
+      <li>Auto-clicker, auto-buy upgrades/buildings</li>
+      <li>Auto ascend, golden cookie rain, bakery rename</li>
+    </ul>
 
-  <div class="badges">
-    <img src="https://img.shields.io/badge/version-10-brown" alt="Version">
-    <img src="https://img.shields.io/github/license/whotfusests/Burnt-Cookie" alt="License">
-    <img src="https://img.shields.io/badge/Cookie%20Clicker-compatible-blueviolet" alt="Compatible">
-    <img src="https://shields.io/badge/JavaScript-F7DF1E?logo=JavaScript&logoColor=000&style=flat-square" alt="Language">
-    <img src="https://img.shields.io/badge/theme-dark/pastel/neon-ff69b4" alt="Themes">
-    <img src="https://img.shields.io/badge/HUD-floating-orange" alt="HUD">
-    <img src="https://img.shields.io/badge/modular-yes-success" alt="Modular">
+    <h2>📦 Installation</h2>
+    <p>Paste this into your Cookie Clicker console:</p>
+    <div class="code-block">
+      <button class="copy-btn">Copy</button>
+      <code>fetch('https://raw.githubusercontent.com/whotfusests/Burnt-Cookie/refs/heads/main/modules/loader.js')<br>.then(res => res.text())<br>.then(code => eval(code));</code>
+    </div>
+
+    <p><strong>Or drag the image below into your bookmarks bar</strong> for a one-click install:</p>
+    <div class="bookmarklet">
+      <a href="javascript:(()=>{fetch('https://raw.githubusercontent.com/whotfusests/Burnt-Cookie/refs/heads/main/modules/loader.js').then(res=>res.text()).then(code=>eval(code));})()" draggable="true">
+        <img src="https://raw.githubusercontent.com/whotfusests/Burnt-Cookie/refs/heads/main/pages/images/injector.png" alt="Inject Burnt Cookie">
+      </a>
+    </div>
+
+    <h2>💻 Usage</h2>
+    <p>Type in your console:</p>
+    <div class="code-block">
+      <button class="copy-btn">Copy</button>
+      <code>burntCookie("help")</code>
+    </div>
+
+    <h2>🧩 Commands</h2>
+    <table>
+      <thead><tr><th>Command</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td><code>cookies max</code></td><td>Set cookies to max</td></tr>
+        <tr><td><code>autoclicker toggle</code></td><td>Toggle auto-clicker</td></tr>
+        <tr><td><code>autoupgrades toggle</code></td><td>Toggle auto-upgrades</td></tr>
+        <tr><td><code>ascend auto</code></td><td>Auto ascend mode</td></tr>
+        <tr><td><code>debug</code></td><td>Enable debug tools</td></tr>
+      </tbody>
+    </table>
+
+    <h2>📜 License</h2>
+    <p>MIT © <a href="https://github.com/whotfusests" target="_blank">whotfusests</a></p>
   </div>
 
-  <h2>🍪 Features</h2>
-  <ul>
-    <li>CMD-style command system with <code>burntCookie("command")</code></li>
-    <li>Unlimited cookies, auto-buy, auto-upgrades</li>
-    <li>Sugar lump cheats, wrinkler/shimmer tools</li>
-    <li>Debug panel tools and hidden achievements</li>
-    <li>Bakery renaming, season switching</li>
-    <li>Speed control, golden cookie rain</li>
-    <li>Full automation toggles</li>
-    <li>Stylish draggable/resizable mod menu</li>
-    <li>Floating real-time stats HUD</li>
-    <li>Dark, Pastel, and Neon themes built-in</li>
-    <li>Resizable UI with minimizable/maximizable windows</li>
-    <li>Modular system (fetches features from GitHub dynamically)</li>
-  </ul>
-
-  <h2>📦 Installation</h2>
-  <p>Paste the following code into your browser console <strong>while Cookie Clicker is open</strong>:</p>
-  <div class="code-block">
-    <button class="copy-btn">Copy</button>
-    <pre><code>fetch('https://whotfusests.github.io/Burnt-Cookie/modules/loader.js')
-  .then(res => res.text())
-  .then(code => eval(code));</code></pre>
-  </div>
-
-  <p>Or use this bookmarklet <strong>[NO CODE PASTING NEEDED, INSTANT MOD INJECTION]</strong>:</p>
-  <div class="code-block">
-    <button class="copy-btn">Copy</button>
-    <pre><code>javascript:(()=>{fetch('https://whotfusests.github.io/Burnt-Cookie/modules/loader.js').then(r=>r.text()).then(t=>eval(t));})()</code></pre>
-  </div>
-
-  <h2>💻 Usage</h2>
-  <p>Once installed, type:</p>
-  <div class="code-block">
-    <button class="copy-btn">Copy</button>
-    <pre><code>burntCookie("help")</code></pre>
-  </div>
-
-  <p>Example:</p>
-  <div class="code-block">
-    <button class="copy-btn">Copy</button>
-    <pre><code>burntCookie("cookies max")
-burntCookie("autoclicker toggle")
-burntCookie("ascend auto")</code></pre>
-  </div>
-
-  <p>Try new GUI commands like:</p>
-  <div class="code-block">
-    <button class="copy-btn">Copy</button>
-    <pre><code>burntCookie("theme pastel")
-burntCookie("hud toggle")
-burntCookie("menu resize 400 300")</code></pre>
-  </div>
-
-  <h2>🧩 Command List</h2>
-  <table>
-    <thead>
-      <tr><th>Command</th><th>Description</th></tr>
-    </thead>
-    <tbody>
-      <tr><td><code>cookies max</code></td><td>Max out cookies</td></tr>
-      <tr><td><code>buildings +100</code></td><td>Add 100 to all buildings</td></tr>
-      <tr><td><code>autoclicker toggle</code></td><td>Toggle auto-clicking</td></tr>
-      <tr><td><code>autoupgrades toggle</code></td><td>Toggle auto upgrades</td></tr>
-      <tr><td><code>golden rain</code></td><td>Spawn 20 golden cookies</td></tr>
-      <tr><td><code>shimmers pop</code></td><td>Pop all shimmers</td></tr>
-      <tr><td><code>wrinklers pop</code></td><td>Pop all wrinklers</td></tr>
-      <tr><td><code>ascend auto</code></td><td>Auto ascend with reincarnation</td></tr>
-      <tr><td><code>bakery set &lt;name&gt;</code></td><td>Rename your bakery</td></tr>
-      <tr><td><code>season christmas</code></td><td>Switch to Christmas season</td></tr>
-      <tr><td><code>debug</code></td><td>Open debug panel</td></tr>
-      <tr><td><code>theme dark</code></td><td>Set UI to dark theme</td></tr>
-      <tr><td><code>theme pastel</code></td><td>Set UI to pastel theme</td></tr>
-      <tr><td><code>theme neon</code></td><td>Set UI to neon theme</td></tr>
-      <tr><td><code>hud toggle</code></td><td>Show/hide floating stats HUD</td></tr>
-      <tr><td><code>menu resize &lt;width&gt; &lt;height&gt;</code></td><td>Resize the mod GUI</td></tr>
-      <tr><td><code>menu minimize</code></td><td>Minimize the mod menu</td></tr>
-      <tr><td><code>menu maximize</code></td><td>Maximize the mod menu</td></tr>
-    </tbody>
-  </table>
-
-  <h2>🛠 Development</h2>
-  <p>This project is hosted at:<br>
-    📁 <a href="https://github.com/whotfusests/burnt-cookie" target="_blank">GitHub</a></p>
-
-  <h2>📜 License</h2>
-  <p>MIT © 2025 <a href="https://github.com/whotfusests" target="_blank">whotfusests</a></p>
-</div>
-
-<!-- Floating emojis -->
-<script>
-  const emojis = ['🔥', '🍪'];
-  const emojiCount = 50;
-
-  for (let i = 0; i < emojiCount; i++) {
-    const emoji = document.createElement('div');
-    emoji.className = 'floating-emoji';
-    emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
-    emoji.style.left = Math.random() * 100 + 'vw';
-    emoji.style.top = Math.random() * 100 + 'vh';
-    emoji.style.fontSize = `${Math.random() * 2 + 1}rem`;
-
-    const dx = (Math.random() - 0.5) * 200;
-    const dy = (Math.random() - 0.5) * 200;
-    const duration = 20 + Math.random() * 10;
-    const animName = `float-${i}`;
-
-    const style = document.createElement('style');
-    style.textContent = `
-      @keyframes ${animName} {
-        0% { transform: translate(0, 0) rotate(0deg); opacity: 0.4; }
-        100% { transform: translate(${dx}px, ${dy}px) rotate(360deg); opacity: 0; }
-      }
-    `;
-    document.head.appendChild(style);
-
-    emoji.style.animation = `${animName} ${duration}s linear infinite`;
-    document.body.appendChild(emoji);
-  }
-</script>
-
-<!-- Copy-to-clipboard -->
-<script>
-  document.querySelectorAll('.copy-btn').forEach(button => {
-    button.addEventListener('click', () => {
-      const code = button.parentElement.querySelector('code').textContent;
-      navigator.clipboard.writeText(code).then(() => {
-        button.textContent = 'Copied!';
-        setTimeout(() => (button.textContent = 'Copy'), 1200);
+  <script>
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const code = btn.parentElement.querySelector('code').textContent;
+        navigator.clipboard.writeText(code).then(() => {
+          btn.textContent = 'Copied!';
+          setTimeout(() => btn.textContent = 'Copy', 1000);
+        });
       });
     });
-  });
-</script>
-
+  </script>
 </body>
 </html>
