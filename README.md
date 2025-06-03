@@ -81,6 +81,7 @@ burntCookie("ascend auto")
 | `bakery set <name>`       | Rename your bakery                 |
 | `season christmas`        | Switch to Christmas season         |
 | `debug`                   | Open debug panel                   |
+| `And more...`             | Type "burntCookie("help") to learn.|
 
 ---
 
